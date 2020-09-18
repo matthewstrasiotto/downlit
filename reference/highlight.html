@@ -77,7 +77,7 @@ in comments, translates ANSI escapes in to HTML equivalents.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">downlit</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
       </span>
     </div>
 
@@ -91,6 +91,9 @@ in comments, translates ANSI escapes in to HTML equivalents.
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -127,7 +130,7 @@ in comments, translates ANSI escapes in to HTML equivalents.
 
     </div>
 
-    <pre class="usage"><span class='fu'>highlight</span>(<span class='no'>text</span>, <span class='kw'>classes</span> <span class='kw'>=</span> <span class='fu'>classes_chroma</span>(), <span class='kw'>pre_class</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>highlight</span>(<span class='va'>text</span>, classes <span class='op'>=</span> <span class='fu'>classes_chroma</span>(), pre_class <span class='op'>=</span> <span class='kw'>NULL</span>)
 
 <span class='fu'>classes_pandoc</span>()
 
@@ -157,9 +160,16 @@ can use existing themes.</p></td>
 
     <p>If <code>text</code> is valid R code, an HTML <code>&lt;pre&gt;</code> tag. Otherwise,
 <code>NA</code>.</p>
+<p>A string containing syntax highlighted HTML or <code>NA</code> (if <code>text</code>
+isn't parseable).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='fu'>highlight</span>(<span class='st'>"1 + 1"</span>))</div><div class='output co'>#&gt; &lt;span class='m'&gt;1&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;1&lt;/span&gt;</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='fu'>highlight</span>(<span class='st'>"1 + 1"</span>))
+</div><div class='output co'>#&gt; &lt;span class='m'&gt;1&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;1&lt;/span&gt;</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='fu'>highlight</span>(<span class='st'>"base::t(1:3)"</span>))
+</div><div class='output co'>#&gt; &lt;span class='nf'&gt;base&lt;/span&gt;&lt;span class='nf'&gt;::&lt;/span&gt;&lt;span class='nf'&gt;&lt;a href='https://rdrr.io/r/base/t.html'&gt;t&lt;/a&gt;&lt;/span&gt;(&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;&lt;span class='m'&gt;3&lt;/span&gt;)</div><div class='input'>
+<span class='co'># Unparseable R code returns NA</span>
+<span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='fu'>highlight</span>(<span class='st'>"base::t("</span>))
+</div><div class='output co'>#&gt; NA</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -175,7 +185,7 @@ can use existing themes.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

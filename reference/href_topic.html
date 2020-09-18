@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">downlit</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
       </span>
     </div>
 
@@ -86,6 +86,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -117,9 +120,9 @@
     <p>Generate url for topic/article</p>
     </div>
 
-    <pre class="usage"><span class='fu'>href_topic</span>(<span class='no'>topic</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>href_topic</span>(<span class='va'>topic</span>, package <span class='op'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>href_article</span>(<span class='no'>article</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>href_article</span>(<span class='va'>article</span>, package <span class='op'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,7 +137,14 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>URL topic or article; <code>NA</code> if can't find one.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>href_topic</span>(<span class='st'>"t"</span>)
+</div><div class='output co'>#&gt; [1] "https://rdrr.io/r/base/t.html"</div><div class='input'><span class='fu'>href_topic</span>(<span class='st'>"DOESN'T EXIST"</span>)
+</div><div class='output co'>#&gt; [1] NA</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -150,7 +160,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
